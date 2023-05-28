@@ -20,4 +20,4 @@ RUN export ${MAKE_ARGS} && make
 
 # ENV PATH="PATH=$PATH:/llama.cpp/build/bin"
 
-ENTRYPOINT ["python3", "koboldcpp.py"]
+ENTRYPOINT ["python3"]
