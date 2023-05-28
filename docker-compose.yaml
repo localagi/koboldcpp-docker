@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+
+# GPU Inference        
+  llama.cpp-server:
+    image: localagi/koboldcpp:${KOBOLDCPP_VERSION}${KOBOLDCPP_FLAVOR}
+    command: "server --model ${LOCAL_MODEL_DIR}/Wizard-Vicuna-7B-Uncensored-GGML/Wizard-Vicuna-7B-Uncensored.ggmlv3.q5_1.bin --host 0.0.0.0"
+    ports:
+      - 8080:8080
+    volumes:
+      - $LOCAL_MODEL_DIR:$LOCAL_MODEL_DIR
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]

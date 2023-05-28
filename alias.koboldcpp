@@ -1,0 +1,4 @@
+# Alias helper
+source .env
+GPU_ARGS="--gpus all"
+alias koboldcpp="docker run --init ${GPU_ARGS} -v ${LOCAL_MODEL_DIR}:${LOCAL_MODEL_DIR} localagi/koboldcpp:${KOBOLDCPP_VERSION}${KOBOLDCPP_FLAVOR}"
