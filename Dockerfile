@@ -10,7 +10,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 COPY --link . /koboldcpp
 WORKDIR /koboldcpp
 ARG MAKE_ARGS=
-RUN ${MAKE_ARGS} make
+RUN export ${MAKE_ARGS} && make
 
 # ENV PATH="PATH=$PATH:/llama.cpp/build/bin"
 
