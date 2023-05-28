@@ -40,7 +40,7 @@ jobs:
           platforms: linux/amd64,linux/arm64/v8   
 
         - type: OPENBLAS
-          cmake-args: "LLAMA_OPENBLAS=1"
+          make-args: "LLAMA_OPENBLAS=1"
           suffix: "-openblas"
           platforms: linux/amd64,linux/arm64/v8
           
